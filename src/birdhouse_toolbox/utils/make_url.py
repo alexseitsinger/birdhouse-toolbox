@@ -1,6 +1,6 @@
 import re
 
-from ...settings import HTTP_SCHEMES
+from ..settings import HTTP_SCHEMES
 
 
 def make_url(url, suffix, *args):

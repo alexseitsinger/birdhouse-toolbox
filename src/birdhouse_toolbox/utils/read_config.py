@@ -2,8 +2,8 @@ import json
 from json import JSONDecodeError
 import os
 
-from ...settings import DEFAULT_CONFIG_FILE_NAME
-from ...exceptions import ReadConfigException
+from ..settings import DEFAULT_CONFIG_FILE_NAME
+from ..exceptions import ReadConfigException
 
 
 def read_config(site_url, config_file_name=DEFAULT_CONFIG_FILE_NAME):

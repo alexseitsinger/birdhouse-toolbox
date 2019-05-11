@@ -4,10 +4,6 @@ from .get_footer_html import get_footer_html
 from .get_form_html import get_form_html
 from .get_header_html import get_header_html
 from .get_tag_html import get_tag_html
-from .make_request import make_request
-from .make_url import make_url
-from .read_config import read_config
-from .save_config import save_config
 from .read_credentials import read_credentials
 from .save_credentials import save_credentials
 from .get_authentication_header import get_authentication_header

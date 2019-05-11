@@ -1,12 +1,12 @@
 import requests
 import json
 
-from ...settings import (
+from ..settings import (
     DEFAULT_TIMEOUT,
     DEFAULT_HEADERS,
     HTTP_METHODS_ALLOWED,
 )
-from ...exceptions import (
+from ..exceptions import (
     RequestMethodIncorrectException,
     RequestTimeoutException,
     RequestFailureException,
