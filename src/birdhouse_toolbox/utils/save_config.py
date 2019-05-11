@@ -12,8 +12,8 @@ def save_config(
     config_file_name=DEFAULT_CONFIG_FILE_NAME
 ):
     config_file = os.path.join(os.path.expanduser("~"), config_file_name)
+    encoding = "utf-8"
     data = {}
-    encoding="utf-8"
     # Get the existing data for the site.
     if os.path.exists(config_file):
         with open(config_file, "r", encoding=encoding) as old_file:
