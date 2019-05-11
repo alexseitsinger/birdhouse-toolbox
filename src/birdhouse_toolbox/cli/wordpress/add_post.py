@@ -1,9 +1,11 @@
 import click
 from slugify import slugify
 
-from ...utils.wordpress import (
-    make_url,
+from ...utils import (
     make_request,
+    make_url,
+)
+from ...utils.wordpress import (
     create_post_content,
     read_credentials,
     get_authentication_header,

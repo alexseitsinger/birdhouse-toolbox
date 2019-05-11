@@ -1,10 +1,7 @@
 import click
 
-from ...utils.wordpress import (
-    make_request,
-    make_url,
-    read_credentials
-)
+from ...utils import make_request, make_url
+from ...utils.wordpress import read_credentials
 from ...settings import POSTS_URL
 
 
