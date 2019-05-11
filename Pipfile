@@ -7,7 +7,7 @@ verify_ssl = true
 click = "*"
 requests = "*"
 css-html-js-minify = "*"
-wordpress-toolbox = {editable = true,path = "."}
+birdhouse-toolbox = {editable = true,path = "."}
 python-slugify = "*"
 package-controller = "*"
 
