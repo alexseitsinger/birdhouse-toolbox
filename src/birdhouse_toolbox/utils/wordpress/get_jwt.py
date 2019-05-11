@@ -1,5 +1,5 @@
-from .make_request import make_request
-from .make_url import make_url
+from ..make_request import make_request
+from ..make_url import make_url
 from ...settings import JWT_URL
 
 
