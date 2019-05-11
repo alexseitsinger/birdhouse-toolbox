@@ -2,7 +2,7 @@ import json
 from json import JSONDecodeError
 import os
 
-from .read_config import read_config
+from ..read_config import read_config
 from ...exceptions import (
     ReadWordpressJWTConfigException,
     ReadWordpressConfigException

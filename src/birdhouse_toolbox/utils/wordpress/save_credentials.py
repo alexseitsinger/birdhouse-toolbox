@@ -2,7 +2,7 @@ import os
 import json
 from json import JSONDecodeError
 
-from .save_config import save_config
+from ..save_config import save_config
 from ...settings import DEFAULT_CONFIG_FILE_NAME
 
 
