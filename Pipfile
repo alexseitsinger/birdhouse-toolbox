@@ -6,10 +6,8 @@ verify_ssl = true
 [dev-packages]
 click = "*"
 requests = "*"
-css-html-js-minify = "*"
 birdhouse-toolbox = {editable = true,path = "."}
 python-slugify = "*"
-package-controller = "*"
 
 [packages]
 
