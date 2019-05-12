@@ -10,7 +10,7 @@ from ...utils.wordpress import (
     read_credentials,
     get_authentication_header,
 )
-from ...settings import POSTS_URL
+from ...settings import WORDPRESS_POSTS_URL
 
 
 @click.command()
@@ -21,7 +21,7 @@ from ...settings import POSTS_URL
 def add_post(options, title, markup, status):
     site_url = options.url
     timeout = options.timeout
-    rest_url = make_url(site_url, POSTS_URL)
+    rest_url = make_url(site_url, WORDPRESS_POSTS_URL)
     last_post = make_request(method="get", url=rest_url, timeout=timeout)[0]
     click.echo(make_request(
         method="post",

@@ -2,8 +2,8 @@ import requests
 import json
 
 from ..settings import (
-    DEFAULT_TIMEOUT,
-    DEFAULT_HEADERS,
+    DEFAULT_REQUEST_TIMEOUT,
+    DEFAULT_REQUEST_HEADERS,
     HTTP_METHODS_ALLOWED,
 )
 from ..exceptions import (
@@ -19,7 +19,7 @@ def make_request(
     params={},
     data={},
     headers={},
-    timeout=DEFAULT_TIMEOUT,
+    timeout=DEFAULT_REQUEST_TIMEOUT,
 ):
     # get the request method to use.
     method = method.lower()
@@ -33,7 +33,7 @@ def make_request(
         )
     # Create a dictionary of the final headers to use.
     final_headers = {}
-    final_headers.update(DEFAULT_HEADERS)
+    final_headers.update(DEFAULT_REQUEST_HEADERS)
     final_headers.update(headers)
     # Try to make a successful request...
     try:
