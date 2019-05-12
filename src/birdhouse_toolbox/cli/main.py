@@ -6,13 +6,18 @@ from .wordpress import (
     add_post,
     authenticate,
 )
-from .options import Options
-from ..settings import DEFAULT_TIMEOUT
+from ..settings import DEFAULT_REQUEST_TIMEOUT
+
+
+class Options(object):
+    def __init__(self, url=None, timeout=None):
+        self.url = url
+        self.timeout = timeout
 
 
 @click.group()
 @click.option("--url")
-@click.option("--timeout", default=DEFAULT_TIMEOUT, required=False)
+@click.option("--timeout", default=DEFAULT_REQUEST_TIMEOUT, required=False)
 @click.pass_context
 def main(ctx, url, timeout):
     ctx.obj = Options(url, timeout)
