@@ -2,7 +2,7 @@
 
 ## Description
 
-Command line tools automate various online marketing processes.
+Command line tools to automate various online marketing processes.
 
 ## Installation
 
