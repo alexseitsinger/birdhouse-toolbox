@@ -1,18 +1,9 @@
 import click
 
-from .wordpress import (
-    get_posts,
-    get_post,
-    add_post,
-    authenticate,
-)
+from .options import Options
+from .wordpress import main as wordpress_main
+from .analytics import main as analytics_main
 from ..settings import DEFAULT_REQUEST_TIMEOUT
-
-
-class Options(object):
-    def __init__(self, url=None, timeout=None):
-        self.url = url
-        self.timeout = timeout
 
 
 @click.group()
@@ -22,12 +13,8 @@ class Options(object):
 def main(ctx, url, timeout):
     ctx.obj = Options(url, timeout)
 
-# wordpress commands
-main.add_command(get_post)
-main.add_command(get_posts)
-main.add_command(add_post)
-main.add_command(authenticate)
 
-# analytics commands
+main.add_command(wordpress_main)
+main.add_command(analytics_main)
 
 
