@@ -1,16 +1,13 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 from setuptools import setup, find_packages
-from setup_utils import PACKAGE_NAME, read
+from setup_utils import PACKAGE_NAME, read, read_section
 
 
 setup(
     name=PACKAGE_NAME,
     version=read(("src", PACKAGE_NAME, "__init__.py",), "__version__"),
-    description=(
-        "A collection of commnad line tools to automate various online "
-        "marketing processes"
-    ),
+    description=read_section(("README.md",), "Description", (0,)),
     long_description=read(("README.md",)),
     long_description_content_type="text/markdown",
     author="Alex Seitsinger",
