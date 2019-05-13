@@ -1,6 +1,6 @@
 import click
 
-from ...utils.wordpress import (
+from ....utils.wordpress import (
     save_credentials,
     get_jwt,
     save_jwt,

@@ -1,8 +1,8 @@
 import click
 
-from ...utils import make_request, make_url
-from ...utils.wordpress import read_credentials
-from ...settings import WORDPRESS_POSTS_URL
+from ....utils import make_request, make_url
+from ....utils.wordpress import read_credentials
+from ....settings import WORDPRESS_POSTS_URL
 
 
 @click.command()

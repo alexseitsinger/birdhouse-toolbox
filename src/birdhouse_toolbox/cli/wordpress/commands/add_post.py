@@ -1,16 +1,16 @@
 import click
 from slugify import slugify
 
-from ...utils import (
+from ....utils import (
     make_request,
     make_url,
 )
-from ...utils.wordpress import (
+from ....utils.wordpress import (
     create_post_content,
     read_credentials,
     get_authentication_header,
 )
-from ...settings import WORDPRESS_POSTS_URL
+from ....settings import WORDPRESS_POSTS_URL
 
 
 @click.command()
