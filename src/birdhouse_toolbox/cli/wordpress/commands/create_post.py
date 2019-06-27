@@ -4,7 +4,7 @@ import click
 from ....library.wordpress.create_post import create_post as fn
 
 
-@click.command()
+@click.command(name="create")
 @click.option("--title", required=True, help="The title of the post.")
 @click.option("--content", required=True, help="The post content.")
 @click.option(

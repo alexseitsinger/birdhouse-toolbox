@@ -4,7 +4,7 @@ import click
 from ...library.wordpress.commands import authenticate as fn
 
 
-@click.command()
+@click.command(name="auth")
 @click.option("--username", "-u")
 @click.option("--password", "-p")
 @click.pass_obj
