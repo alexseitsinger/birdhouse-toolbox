@@ -1,5 +1,8 @@
+import os
 import re
 import itertools
+
+from ..read_file import read_file
 
 
 def to_html(tag_name, content):
@@ -44,6 +47,8 @@ def create_html_list(sections, item_list, tag_name="ol"):
 
 
 def format_as_html(text):
+    if os.path.isfile(text):
+        text = read_file(text)
     sections = text.strip().split("\n")
     title_index = 0
     title = sections.pop(title_index)

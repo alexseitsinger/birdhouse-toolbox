@@ -5,12 +5,7 @@ from json import JSONDecodeError
 from ..settings import DEFAULT_CONFIG_FILE_NAME
 
 
-def save_config(
-    site_url,
-    key,
-    value,
-    config_file_name=DEFAULT_CONFIG_FILE_NAME
-):
+def save_config(site_url, key, value, config_file_name=DEFAULT_CONFIG_FILE_NAME):
     config_file = os.path.join(os.path.expanduser("~"), config_file_name)
     encoding = "utf-8"
     data = {}
@@ -31,4 +26,3 @@ def save_config(
         data[site_url] = entry
         # write the file.
         new_file.write(json.dumps(data))
-
