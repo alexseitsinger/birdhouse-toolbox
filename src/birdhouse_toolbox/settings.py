@@ -20,3 +20,10 @@ DEFAULT_CONFIG_FILE_NAME = "birdhouse-toolbox.json"
 HTTP_SCHEMES = ("http://", "https://")
 
 HTTP_METHODS_ALLOWED = ("get", "post", "put", "delete", "options", "head")
+
+CONTENT_TYPES_ALLOWED = {
+    "png": "image/png",
+    "jpg": "image/jpeg",
+    "jpeg": "image/jpeg",
+    "gif": "image/gif",
+}
