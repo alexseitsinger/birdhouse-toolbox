@@ -1,3 +1,10 @@
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v1.0.0...v2.0.0) (2019-06-27)
+
+### Code Refactoring
+- Adds shorter names. ([64dfcb9](https://github.com/alexseitsinger/birdhouse_toolbox/commit/64dfcb96433dcb588eaae2ca9f42b6f8e5ccaa4e))
+
+
 <a name="v1.0.0"></a>
 ## [v1.0.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v0.2.0...v1.0.0) (2019-06-27)
 
