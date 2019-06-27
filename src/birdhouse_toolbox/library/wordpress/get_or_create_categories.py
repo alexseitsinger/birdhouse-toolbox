@@ -1,4 +1,5 @@
 from slugify import slugify
+import json
 
 from ..request import request
 from ...settings import WORDPRESS_CATEGORIES_URI
@@ -10,25 +11,24 @@ def create_category(site_url, name):
     url = make_url(site_url, WORDPRESS_CATEGORIES_URI)
     data = {"name": name, "slug": slugify(name)}
     headers = get_authentication_header(site_url)
-    return request("post", url, data=data, headers=headers)
+    try:
+        return request("post", url, data=data, headers=headers)
+    except RuntimeError as exc:
+        msg = str(exc)
+        data_str = "".join(msg.split("\n")[2:])
+        data = json.loads(data_str)
+        if data["code"] == "term_exists":
+            raise RuntimeError("The term '{}' already exists as a tag.".format(name))
+        raise exc
 
 
-def get_categories(site_url):
+def get_category(site_url, name):
+    slug = slugify(name)
     url = make_url(site_url, WORDPRESS_CATEGORIES_URI)
-    return request("get", url)
-
-
-def get_category(site_url, key):
-    if isinstance(key, str):
-        key = slugify(key)
-    cats = get_categories(site_url)
-    for cat in cats:
-        if isinstance(key, str):
-            if cat["slug"] == key:
-                return cat
-        if isinstance(key, int):
-            if cat["id"] == key:
-                return cat
+    response = request("get", url, params={"slug": slug})
+    if len(response) > 1:
+        raise RuntimeError("Found more than 1 category for slug '{}'.".format(slug))
+    return response[0]
 
 
 def get_or_create_category(site_url, name):

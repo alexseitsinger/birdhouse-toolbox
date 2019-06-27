@@ -1,3 +1,4 @@
+import json
 from slugify import slugify
 
 from ..request import request
@@ -10,23 +11,26 @@ def create_tag(site_url, name):
     url = make_url(site_url, WORDPRESS_TAGS_URI)
     data = {"name": name, "slug": slugify(name)}
     headers = get_authentication_header(site_url)
-    return request("post", url, data=data, headers=headers)
+    try:
+        return request("post", url, data=data, headers=headers)
+    except RuntimeError as exc:
+        msg = str(exc)
+        data_str = "".join(msg.split("\n")[2:])
+        data = json.loads(data_str)
+        if data["code"] == "term_exists":
+            raise RuntimeError(
+                "The term '{}' already exists as a category.".format(name)
+            )
+        raise exc
 
 
-def get_tags(site_url):
+def get_tag(site_url, name):
+    slug = slugify(name)
     url = make_url(site_url, WORDPRESS_TAGS_URI)
-    response = request("get", url)
-    return response
-
-
-def get_tag(site_url, key):
-    if isinstance(key, str):
-        key = slugify(key)
-    for tag in get_tags(site_url):
-        if isinstance(key, str) and tag["slug"] == key:
-            return tag
-        if isinstance(key, int) and tag["id"] == key:
-            return tag
+    response = request("get", url, params={"slug": slug})
+    if len(response) > 1:
+        raise RuntimeError("Found more than 1 tag for slug '{}'.".format(slug))
+    return response[0]
 
 
 def get_or_create_tag(site_url, name):
