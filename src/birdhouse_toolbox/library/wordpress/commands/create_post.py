@@ -22,6 +22,9 @@ def create_post(site_url, title, content, status, tags, categories, media, timeo
 
     rest_url = make_url(site_url, WORDPRESS_POSTS_URI)
     last_post = request("get", rest_url, timeout=timeout)[0]
+    featured_media = None
+    if media is not None:
+        featured_media = create_featured_media(site_url, media)["id"]
     return request(
         "post",
         rest_url,
@@ -36,7 +39,7 @@ def create_post(site_url, title, content, status, tags, categories, media, timeo
             "categories": [
                 x["id"] for x in get_or_create_categories(site_url, categories)
             ],
-            # "featured_media": create_featured_media(site_url, media),
+            "featured_media": featured_media,
             "meta": last_post["meta"],
             "template": last_post["template"],
         },
