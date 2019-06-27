@@ -5,13 +5,15 @@ from ..get_authentication_header import get_authentication_header
 from ..format_as_html import format_as_html
 from ..create_post_content import create_post_content
 from ..get_or_create_tags import get_or_create_tags
+from ..get_or_create_categories import get_or_create_categories
+from ..create_featured_media import create_featured_media
 from ...request import request
 from ...make_url import make_url
 from ...read_file import read_file
 from ....settings import WORDPRESS_POSTS_URI
 
 
-def create_post(site_url, title, content, status, tags, categories, timeout):
+def create_post(site_url, title, content, status, tags, categories, media, timeout):
     if os.path.isfile(content):
         content = read_file(content)
         body_markup = format_as_html(content)
@@ -20,29 +22,22 @@ def create_post(site_url, title, content, status, tags, categories, timeout):
 
     rest_url = make_url(site_url, WORDPRESS_POSTS_URI)
     last_post = request("get", rest_url, timeout=timeout)[0]
-
     return request(
         "post",
         rest_url,
         timeout=timeout,
         headers=get_authentication_header(site_url),
         data={
-            # "date
-            # "date_gmt", "",
             "slug": slugify(title),
             "status": status,
-            # "password": None,
             "title": title,
             "content": create_post_content(site_url, body_markup),
-            "tags": get_or_create_tags(tags),
-            # "author": 3,
-            # "excerpt": last_post["excerpt"],
-            # "featured_media": last_post["featured_media"],
-            # "comment_status": last_post["comment_status"],
-            # "ping_status": last_post["ping_status"],
-            # "format": last_post["format"],
+            "tags": [x["id"] for x in get_or_create_tags(site_url, tags)],
+            "categories": [
+                x["id"] for x in get_or_create_categories(site_url, categories)
+            ],
+            # "featured_media": create_featured_media(site_url, media),
             "meta": last_post["meta"],
-            # "sticky": last_post["sticky"],
             "template": last_post["template"],
         },
     )
