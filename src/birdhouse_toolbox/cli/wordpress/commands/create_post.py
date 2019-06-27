@@ -1,7 +1,9 @@
 import os
 import click
 
-from ....library.wordpress.create_post import create_post as fn
+from ....library.wordpress.commands.create_post import create_post as fn
+
+EXCEPTIONS = (RuntimeError, AttributeError, FileNotFoundError)
 
 
 @click.command(name="create")
@@ -17,8 +19,9 @@ from ....library.wordpress.create_post import create_post as fn
 @click.option(
     "--category", multiple=True, required=False, help="The category of the post."
 )
+@click.option("--media", required=False, help="The path to a media file.")
 @click.pass_obj
-def create_post(options, title, content, status, tag, category):
+def create_post(options, title, content, status, tag, category, media):
     try:
         response = fn(
             site_url=options.url,
@@ -28,8 +31,9 @@ def create_post(options, title, content, status, tag, category):
             tags=tag,
             categories=category,
             timeout=options.timeout,
+            media=media,
         )
         click.secho("Post creation succeeded.", fg="green", bold=True)
-    except RuntimeError as exc:
+    except EXCEPTIONS as exc:
         click.secho("Post creation failed.", fg="red", bold=True)
         click.secho(str(exc), fg="red")
