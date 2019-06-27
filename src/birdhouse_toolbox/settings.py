@@ -1,8 +1,12 @@
-WORDPRESS_URL_PREFIX = "wp-json"
+WORDPRESS_API_URI = "wp-json/wp/v2"
 
-WORDPRESS_POSTS_URL = "{}/wp/v2/posts".format(WORDPRESS_URL_PREFIX)
+WORDPRESS_POSTS_URI = "{}/posts".format(WORDPRESS_API_URI)
 
-WORDPRESS_JWT_URL = "{}/jwt-auth/v1".format(WORDPRESS_URL_PREFIX)
+WORDPRESS_TAGS_URI = "{}/tags".format(WORDPRESS_API_URI)
+
+WORDPRESS_CATEGORIES_URI = "{}/categories".format(WORDPRESS_API_URI)
+
+WORDPRESS_JWT_URI = "wp-json/jwt-auth/v1"
 
 DEFAULT_REQUEST_TIMEOUT = 10.0
 
@@ -11,8 +15,8 @@ DEFAULT_REQUEST_HEADERS = {
     "Accept": "application/json",
 }
 
-DEFAULT_CONFIG_FILE_NAME = "birdhouse_toolbox.json"
+DEFAULT_CONFIG_FILE_NAME = "birdhouse-toolbox.json"
 
-HTTP_SCHEMES = ("http://", "https://",)
+HTTP_SCHEMES = ("http://", "https://")
 
-HTTP_METHODS_ALLOWED = ("get", "post", "put", "delete", "options", "head",)
+HTTP_METHODS_ALLOWED = ("get", "post", "put", "delete", "options", "head")
