@@ -1,8 +1,6 @@
 import click
 
 
-@click.group(name="analytics")
+@click.group(name="ga")
 def main():
     pass
-
-
