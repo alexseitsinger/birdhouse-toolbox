@@ -1,3 +1,26 @@
+<a name="v3.0.0"></a>
+## [v3.0.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v2.0.0...v3.0.0) (2019-06-27)
+
+### Bug Fixes
+- Adds default value for arg. ([492b3e3](https://github.com/alexseitsinger/birdhouse_toolbox/commit/492b3e38032f369059a5bd112ac9248b762e58f7))
+- Creates config file if none exists. ([1697266](https://github.com/alexseitsinger/birdhouse_toolbox/commit/1697266d2ef6b17c19b55a91a6f0a7f22d821bd4))
+- Fixes import. ([7532a58](https://github.com/alexseitsinger/birdhouse_toolbox/commit/7532a587473908ce68e1c739a2c5fc1f784610f7))
+- Renames settings variable. ([04b0f39](https://github.com/alexseitsinger/birdhouse_toolbox/commit/04b0f39f985784884b8adff72019c61604dbb392))
+- Renames settings variable. ([3f17c24](https://github.com/alexseitsinger/birdhouse_toolbox/commit/3f17c24a7e2eb05173b2ae32c310c1ba2ca2c1c2))
+- Updates module to use auth headers, and more. ([c77b4c8](https://github.com/alexseitsinger/birdhouse_toolbox/commit/c77b4c8c65978bf14f8270e070080ffa87d59fba))
+
+### Code Refactoring
+- Adds exception instead of return dict. ([6f0222a](https://github.com/alexseitsinger/birdhouse_toolbox/commit/6f0222a4b6d2375d864427921bf4cdccf559f0af))
+- Renames analytics to ga. ([55f45f3](https://github.com/alexseitsinger/birdhouse_toolbox/commit/55f45f3ea078abd5bd635579f06459eba263a9f4))
+- Renames url arg to site_url. ([7bbc6bf](https://github.com/alexseitsinger/birdhouse_toolbox/commit/7bbc6bfb7a45eba1f24084bf97800e1de8e6baf2))
+
+### Features
+- Adds categories to post data. ([3a196c0](https://github.com/alexseitsinger/birdhouse_toolbox/commit/3a196c0d5269651a9df252a0fe10975937c2010b))
+- Adds media option. ([fa95ab3](https://github.com/alexseitsinger/birdhouse_toolbox/commit/fa95ab31788a79e26a480027f5d001d74ebf639a))
+- Adds module for get/set categories on posts. ([915e816](https://github.com/alexseitsinger/birdhouse_toolbox/commit/915e81643525ba174a442934d02a318214e45358))
+- Adds module for uploading media. ([592cca6](https://github.com/alexseitsinger/birdhouse_toolbox/commit/592cca63b032850e9ae21a84806cc40001e15cd7))
+
+
 <a name="v2.0.0"></a>
 ## [v2.0.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v1.0.0...v2.0.0) (2019-06-27)
 
