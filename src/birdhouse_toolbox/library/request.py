@@ -44,7 +44,6 @@ def request(
             raise RuntimeError(INVALID_METHOD_MESSAGE)
 
         status_code = response.status_code
-
         if not str(status_code).startswith("2"):
             raise RuntimeError(
                 BAD_REQUEST_MESSAGE.format(
