@@ -5,8 +5,8 @@ from setup_utils import read, read_section
 
 PACKAGE_NAME = "birdhouse-toolbox"
 SOURCE_DIR_NAME = "birdhouse_toolbox"
-HOMEPAGE_URL = "https://www.alexseitsinger.com/packages/python/birdhouse-toolbox"
-GITHUB_URL = "https://github.com/alexseitsinger/birdhouse-toolbox"
+HOMEPAGE_URL = "https://www.alexseitsinger.com/packages/python/{}".format(PACKAGE_NAME)
+GITHUB_URL = "https://github.com/alexseitsinger/{}".format(PACKAGE_NAME)
 README_NAME = "README.md"
 
 setup(
