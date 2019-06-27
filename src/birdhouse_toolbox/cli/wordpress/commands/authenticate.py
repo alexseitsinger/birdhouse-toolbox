@@ -1,7 +1,7 @@
 import click
 
 
-from ...library.wordpress.commands import authenticate as fn
+from ....library.wordpress.commands.authenticate import authenticate as fn
 
 
 @click.command(name="auth")
