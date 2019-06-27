@@ -1,3 +1,13 @@
+<a name="v1.0.0"></a>
+## [v1.0.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v0.2.0...v1.0.0) (2019-06-27)
+
+### Code Refactoring
+- Changes to use library methods. ([2e116ff](https://github.com/alexseitsinger/birdhouse_toolbox/commit/2e116ffc9c8658fe963a2864357c4b576b950673))
+- Removes unnecessary module. ([8306554](https://github.com/alexseitsinger/birdhouse_toolbox/commit/83065542f6ae2bbf80e32d1b68ac4a690f8e8329))
+- Updates settings. ([26c6152](https://github.com/alexseitsinger/birdhouse_toolbox/commit/26c615224412a8befad8237f201e117689db58c0))
+- Utils renamed library. Various updates. ([0856ea3](https://github.com/alexseitsinger/birdhouse_toolbox/commit/0856ea31bfb0ea8ec4cb545ea343450dfd0a8038))
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0](https://github.com/alexseitsinger/birdhouse_toolbox/compare/v0.1.0...v0.2.0) (2019-05-13)
 
