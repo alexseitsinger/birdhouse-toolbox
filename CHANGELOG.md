@@ -1,3 +1,10 @@
+<a name="v3.2.0"></a>
+## [v3.2.0](https://github.com/alexseitsinger/birdhouse-toolbox/compare/v3.1.0...v3.2.0) (2019-06-27)
+
+### Bug Fixes
+- Accepts an HTML string or path as content. ([78d902a](https://github.com/alexseitsinger/birdhouse-toolbox/commit/78d902a9711d6c0df1ff65a9966bdca6d88c1335))
+
+
 <a name="v3.1.0"></a>
 ## [v3.1.0](https://github.com/alexseitsinger/birdhouse-toolbox/compare/v3.0.0...v3.1.0) (2019-06-27)
 
