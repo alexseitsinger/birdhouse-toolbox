@@ -1,11 +1,7 @@
 import click
 
-from .commands import (
-    add_post,
-    get_posts,
-    get_post,
-    authenticate,
-)
+from .commands.authenticate import authenticate
+from .commands.create_post import create_post
 
 
 @click.group(name="wordpress")
@@ -14,6 +10,4 @@ def main():
 
 
 main.add_command(authenticate)
-main.add_command(get_posts)
-main.add_command(get_post)
-main.add_command(add_post)
+main.add_command(create_post)

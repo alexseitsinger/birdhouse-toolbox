@@ -1,23 +1,17 @@
 import click
 
-from ....utils.wordpress import (
-    save_credentials,
-    get_jwt,
-    save_jwt,
-    read_credentials
-)
+
+from ...library.wordpress.commands import authenticate as fn
 
 
 @click.command()
-@click.option("--username", default=None, required=False)
-@click.option("--password", default=None, required=False)
+@click.option("--username", "-u")
+@click.option("--password", "-p")
 @click.pass_obj
 def authenticate(options, username, password):
-    url = options.url
-    if username is None and password is None:
-        credentials = read_credentials(url)
-        username = credentials["username"]
-        password = credentials["password"]
-    else:
-        save_credentials(url, username, password)
-    save_jwt(url, get_jwt(url, username, password))
+    try:
+        fn(options.url, username, password)
+        click.secho("Authentication succeeded.", fg="green", bold=True)
+    except (AttributeError, RuntimeError) as exc:
+        click.secho("Authentication failed.", fg="red", bold=True)
+        click.secho(str(exc), fg="red")
