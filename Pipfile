@@ -8,7 +8,6 @@ click = "*"
 requests = "*"
 birdhouse-toolbox = {editable = true,path = "."}
 python-slugify = "*"
-package-controller = "==0.3.5"
 
 [packages]
 
