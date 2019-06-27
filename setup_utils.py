@@ -1,8 +1,8 @@
 import os
 import re
+from io import open
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-PACKAGE_NAME = os.path.basename(ROOT_DIR)
+ROOT = os.path.dirname(os.path.abspath(__file__))
 RE_VARIABLE = r"{} = ['\"]([^'\"]*)['\"]"
 RE_README_SECTION_HEADING = r"#+ {}"
 RE_README_SECTION = r"{}[^#]*"
@@ -26,7 +26,7 @@ def read_section(path=("README.md",), title="Description", sentences=(0,)):
 
 
 def read(parts, variable=None):
-    with open(os.path.join(ROOT_DIR, *parts), 'r', encoding='utf-8') as f:
+    with open(os.path.join(ROOT, *parts), "r", encoding="utf-8") as f:
         content = f.read()
     if variable is None:
         return content
@@ -35,4 +35,3 @@ def read(parts, variable=None):
     if match:
         return match.group(1)
     raise RuntimeError("Failed to read {} variable".format(variable))
-
