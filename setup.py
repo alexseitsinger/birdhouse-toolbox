@@ -18,7 +18,7 @@ setup(
     author="Alex Seitsinger",
     author_email="software@alexseitsinger.com",
     url=HOMEPAGE_URL,
-    install_requires=["requests", "click", "python-slugify"],
+    install_requires=["requests", "click", "python-slugify", "maya"],
     entry_points={"console_scripts": ["bht={}.cli:main".format(SOURCE_DIR_NAME)]},
     package_dir={"": "src"},
     packages=find_packages("src", exclude=["tests"]),
