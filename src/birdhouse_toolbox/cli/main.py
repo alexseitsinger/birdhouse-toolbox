@@ -8,8 +8,8 @@ from ..settings import DEFAULT_REQUEST_TIMEOUT
 
 
 @click.group()
-@click.option("--url")
-@click.option("--timeout", default=DEFAULT_REQUEST_TIMEOUT, required=False)
+@click.option("--url", "-u", required=True)
+@click.option("--timeout", "-t", required=False, default=DEFAULT_REQUEST_TIMEOUT)
 @click.pass_context
 def main(ctx, url, timeout):
     ctx.obj = Options(url, timeout)
