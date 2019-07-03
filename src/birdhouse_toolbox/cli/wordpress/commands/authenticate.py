@@ -5,8 +5,8 @@ from ....library.wordpress.commands.authenticate import authenticate as fn
 
 
 @click.command(name="auth")
-@click.option("--username", "-u")
-@click.option("--password", "-p")
+@click.option("--username", "-u", help="The username to log in with.")
+@click.option("--password", "-p", help="The password to log in with.")
 @click.pass_obj
 def authenticate(options, username, password):
     try:
