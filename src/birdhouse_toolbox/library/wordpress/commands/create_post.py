@@ -16,6 +16,8 @@ from ....settings import WORDPRESS_POSTS_URI
 # TODO: We only want to copy published posts, so we should also check for "Draft"
 # status, before choosing a post to duplicate.
 
+# TODO: Update form shortcode insertion.
+
 
 def create_post(site_url, title, content, status, tags, categories, media, timeout):
     html_markup = content
