@@ -3,11 +3,7 @@ import maya
 from .get_posts import get_posts
 
 
-def get_posts_for_dates(site_url, start_date, duration_name="months", duration_value=1):
-    # start date
-    start_date = maya.when(start_date)
-    end_date = start_date.add(**{duration_name: duration_value})
-    # end date
+def get_posts_for_dates(site_url, start_date, end_date):
     # get the posts
     posts_all = []
     posts_selected = []
