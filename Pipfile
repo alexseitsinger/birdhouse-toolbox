@@ -9,6 +9,7 @@ requests = "*"
 birdhouse-toolbox = {editable = true,path = "."}
 python-slugify = "*"
 maya = "*"
+google-api-python-client = "*"
 
 [packages]
 
