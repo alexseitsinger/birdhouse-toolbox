@@ -24,6 +24,8 @@ setup(
         "python-slugify",
         "maya",
         "google-api-python-client",
+        "bs4",
+        "validators",
     ],
     entry_points={"console_scripts": ["bht={}.cli:main".format(SOURCE_DIR_NAME)]},
     package_dir={"": "src"},

@@ -10,6 +10,8 @@ birdhouse-toolbox = {editable = true,path = "."}
 python-slugify = "*"
 maya = "*"
 google-api-python-client = "*"
+bs4 = "*"
+validators = "*"
 
 [packages]
 
