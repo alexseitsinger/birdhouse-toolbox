@@ -1,3 +1,23 @@
+<a name="v3.4.0"></a>
+## [v3.4.0](https://github.com/alexseitsinger/birdhouse-toolbox/compare/v3.3.0...v3.4.0) (2019-07-13)
+
+### Code Refactoring
+- create_report to create_monthly_report ([61e7625](https://github.com/alexseitsinger/birdhouse-toolbox/commit/61e76254c4de4f976ef775659c5a25a1ede63ee7))
+- Moves dates to args. ([2d25b80](https://github.com/alexseitsinger/birdhouse-toolbox/commit/2d25b805201db1df7fb2eccf24f44a0ad9044df8))
+- Re-formats options. ([e5217d3](https://github.com/alexseitsinger/birdhouse-toolbox/commit/e5217d3fc31e64e14e4c7d844f7b8dae5c8dca11))
+- Removes analytics and newsletters. ([ea4810b](https://github.com/alexseitsinger/birdhouse-toolbox/commit/ea4810b543f26092b0068e8dfd65837a45e6c27f))
+- Removes analytics commands ([1186f85](https://github.com/alexseitsinger/birdhouse-toolbox/commit/1186f852c4110bd61f2b187b86ceb22eb431be85))
+- Removes newsletters commands. ([ea3a8b2](https://github.com/alexseitsinger/birdhouse-toolbox/commit/ea3a8b29950824b4b573be186748450f55c1d54b))
+- Renames analytics module. ([214f3dd](https://github.com/alexseitsinger/birdhouse-toolbox/commit/214f3dd8932743473af68bc629005999db17db57))
+- Renames main module. ([f941cf7](https://github.com/alexseitsinger/birdhouse-toolbox/commit/f941cf768876b348f7215e014919419edf7ddecd))
+
+### Features
+- Adds help to options. ([fa465d8](https://github.com/alexseitsinger/birdhouse-toolbox/commit/fa465d88a3506a063cc328eeabb80dd9d510bd64))
+- Adds library module. ([3cdf89c](https://github.com/alexseitsinger/birdhouse-toolbox/commit/3cdf89c32c47cdc2715e8de18b4175c98c848253))
+- Adds link checker library and cli. ([9913824](https://github.com/alexseitsinger/birdhouse-toolbox/commit/9913824f7f00a05ae955a64585114a4c0e7ad826))
+- Adds newsletters library and cli command ([b69d5ef](https://github.com/alexseitsinger/birdhouse-toolbox/commit/b69d5ef9f43e446f61d33e520e6ee31ee234b5f7))
+
+
 <a name="v3.3.0"></a>
 ## [v3.3.0](https://github.com/alexseitsinger/birdhouse-toolbox/compare/v3.2.0...v3.3.0) (2019-06-28)
 
